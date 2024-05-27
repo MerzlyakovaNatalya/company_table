@@ -11,6 +11,7 @@ interface IEmployeesItem {
 const EmployeesItem: FC<IEmployeesItem> = ({ item }) => {
   const {  
     toggleCheckbox, 
+    selected,
     onCheckbox, 
     onCangeName, 
     onCangeSurname,
@@ -18,7 +19,7 @@ const EmployeesItem: FC<IEmployeesItem> = ({ item }) => {
   } = useEmployeesItem({ item })
 
   return (
-    <div className={style.item_employees}>
+    <div className={`${style.item_employees} ${selected ? style.item_employees_selected : ''}`}>
       <Checkbox handleToggle={onCheckbox} toggle={toggleCheckbox} />
       <div className={style.item_employees_text}>
         <Input value={item.name} onChangeDebounce={onCangeName} />
