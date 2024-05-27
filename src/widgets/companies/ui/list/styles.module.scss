@@ -1,0 +1,43 @@
+.list_companies {
+  height: 87vh;
+  border-left: 4px solid #0ca7a7;
+  padding-left: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+
+  &_item {
+    padding: 10px;
+  }
+
+  &_top {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(202, 200, 200);
+    margin-right: 10px;
+  }
+
+  &_menu {
+    min-width: 7em;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    border-right: 1px solid rgba(216, 225, 216, 0.5607843137);
+    height: 50px;
+
+    &_name {
+      width: 42%;
+    }
+
+    &_count {
+      width: 10%;
+    }
+
+    &_address {
+      width: 39%;
+      border-right: 1px solid white;
+    }
+  }
+}

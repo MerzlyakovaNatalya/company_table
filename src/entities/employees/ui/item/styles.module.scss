@@ -1,0 +1,21 @@
+.item_employees {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-bottom-color: rgb(202, 200, 200);
+  border-right: 1px solid #d8e1d88f;
+  // height: 100%;
+
+  &_text {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    border-right: 1px solid #d8e1d88f;
+    height: 50px;
+  }
+
+  &_input {
+    border: 0;
+  }
+}

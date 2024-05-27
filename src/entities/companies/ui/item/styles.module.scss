@@ -1,0 +1,25 @@
+.item_companies {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-bottom-color: rgb(202, 200, 200);
+  border-right: 1px solid #d8e1d88f;
+
+  &_text {
+    min-width: 7em;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    border-right: 1px solid #d8e1d88f;
+    height: 50px;
+
+    &_last {
+      border-right: 0;
+    }
+  }
+
+  &_selected {
+    background-color: #addfe12b;
+  }
+}
