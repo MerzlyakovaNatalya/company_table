@@ -1,0 +1,54 @@
+.side_layout {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  align-items: center;
+}
+
+.side_start {
+  justify-content: flex-start;
+}
+
+.side_end {
+  justify-content: flex-end;
+}
+
+.side_between {
+  justify-content: space-between;
+}
+
+.side_around {
+  justify-content: space-around;
+}
+
+.side_center {
+  justify-content: center;
+}
+
+.padding_small {
+  padding: 10px 20px;
+}
+
+.padding_medium {
+  padding: 20px;
+  overflow: auto;
+
+  > div:first-child {
+    margin-right: 100px;
+  }
+}
+
+.item {
+  margin: 0 5px;
+}
+
+.align_start {
+  align-items: flex-start;
+}
+
+.align_end {
+  align-items: flex-end;
+}
+

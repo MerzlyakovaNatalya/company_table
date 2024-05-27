@@ -1,0 +1,43 @@
+$input-height: 20px;
+$input-width: 90%;
+
+.input-wrapper {
+  position: relative;
+  width: $input-width;
+  border: 0;
+
+  .input {
+    height: $input-height;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: transparent;
+    caret-color: black;
+  }
+
+  &.focused .input {
+    background: white;
+    color: black;
+  }
+
+  .ellipsis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $input-height;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    color: black;
+    background: white;
+  }
+
+  &.focused .ellipsis {
+    display: none;
+  }
+}
