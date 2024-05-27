@@ -15,6 +15,7 @@ interface IEmployeesItem {
 
 interface IUseEmployeesItemReturn {
   toggleCheckbox: boolean
+  selected: boolean
   onCheckbox: () => void
   onCangeName: (value: string) => void
   onCangeSurname: (value: string) => void
@@ -24,6 +25,7 @@ interface IUseEmployeesItemReturn {
 const useEmployeesItem = ({ item }: IEmployeesItem): IUseEmployeesItemReturn => {
   const dispatch = useAppDispatch()
   const [toggleCheckbox, setToggleCheckbox] = useState(false)
+  const [selected, setSelected] = useState(false)
 
   const selectedEmployeesId = useAppSelector(state => state.employees.selectedEmployeesId)
 
@@ -34,7 +36,7 @@ const useEmployeesItem = ({ item }: IEmployeesItem): IUseEmployeesItemReturn => 
     } else {
       dispatch(addEmployeeToSelected(item.id))
     }
-  }, [])
+  }, [setSelected, selected,])
 
   const onCangeName = useCallback(
     useDebounce(name => {
@@ -61,12 +63,14 @@ const useEmployeesItem = ({ item }: IEmployeesItem): IUseEmployeesItemReturn => 
     const hasId = selectedEmployeesId.includes(item.id)
     if (hasId) {
       setToggleCheckbox(true)
+      setSelected(true)
     } else {
       setToggleCheckbox(false)
+      setSelected(false)
     }
   }, [selectedEmployeesId])
   
-  return { toggleCheckbox, onCheckbox, onCangeName, onCangeSurname, onCangePosition }
+  return { toggleCheckbox, selected, onCheckbox, onCangeName, onCangeSurname, onCangePosition }
 }
 
 export default useEmployeesItem
